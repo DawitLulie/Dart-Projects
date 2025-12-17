@@ -1,23 +1,20 @@
-// Exercise 2: Using super
-class Person {
-  String name;
-  int age;
-  
-  Person(this.name, this.age);
-  
-  void introduce() {
-    print("I am $name, $age years old");
+// Exercise 1: Method Overriding
+class Device {
+  void turnOn() {
+    print("Device is turning on");
   }
 }
 
-class Student extends Person {
-  String studentId;
-  
-  Student(String name, int age, this.studentId) : super(name, age);
-  
+class Phone extends Device {
   @override
-  void introduce() {
-    super.introduce();
-    print("My student ID is $studentId");
+  void turnOn() {
+    print("Phone: Screen lights up");
+  }
+}
+
+class Laptop extends Device {
+  @override
+  void turnOn() {
+    print("Laptop: Shows boot screen");
   }
 }
